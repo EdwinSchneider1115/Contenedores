@@ -21,7 +21,9 @@ import com.example.contenedores.ui.theme.ContenedoresTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
@@ -127,29 +129,50 @@ fun Cuadrados(){
     Column(
 
         modifier=Modifier.
-        padding(18.dp).
+        padding(top=30.dp).
         fillMaxWidth(),
-        verticalArrangement= Arrangement.SpaceBetween,
         horizontalAlignment =  Alignment.CenterHorizontally) {
-        val painter = painterResource(id= R.drawable.chulito )
-        Image(painter = painter,contentDescription = null)
 
         Row(
             modifier = Modifier
                 .background(Color.Blue)
-                .padding(18.dp)
+                .height(350.dp)
+                .fillMaxWidth(),
+        ) {
+
+            Text(
+                text = "All tasks completed",
+                fontSize = 25.sp,
+                modifier = Modifier.
+                background(Color.Red).
+                fillMaxHeight()
+
+            )
+            Text(
+                text = "Nice work",
+                fontSize = 25.sp,
+                modifier = Modifier.background(Color.Green).
+                fillMaxHeight().fillMaxWidth(),
+            )
+        }
+        Row(
+            modifier = Modifier
+                .background(Color.Blue)
+                .height(350.dp)
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
                 text = "All tasks completed",
                 fontSize = 25.sp,
-                modifier = Modifier.background(Color.Red).padding(8.dp)
+                modifier = Modifier.background(Color.Green).
+                fillMaxHeight()
             )
             Text(
                 text = "Nice work",
                 fontSize = 25.sp,
-                modifier = Modifier.background(Color.Green).padding(8.dp)
+                modifier = Modifier.background(Color.Red).
+                fillMaxHeight().fillMaxWidth(),
             )
         }
     }
